@@ -37,6 +37,7 @@ namespace GuessTheNumberGame
                         break;
                     }
                     Console.WriteLine($"Incorrect {guessesLeft-1} guesses left!");
+                    Console.WriteLine(GetHint(randomNumber, userGuess));
                     guessesLeft--;
                 } else
                 {
@@ -45,5 +46,15 @@ namespace GuessTheNumberGame
                 }
             } while (correctNumber != true);
         }
+        public static string GetHint(int gameNumber, int guessedNumber)
+        {
+            if (gameNumber > guessedNumber)
+            {
+                return "Go Higher!";
+            } 
+            return "Go Lower!";
+        }
     }
+
+    
 }
